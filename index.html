@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta.title">Belén Cereijo Silva | Business &amp; Data · Strategy · Analytics · Finance</title>
+  <meta name="description" data-i18n-attr="content:meta.description" content="Personal portfolio of Belén Cereijo Silva. Final-year Business Administration &amp; Data Science student at ESIC University. Seeking strategy and data consulting roles in London and Spain.">
+  
+  <!-- Open Graph / Meta for LinkedIn & Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" data-i18n-attr="content:meta.title" content="Belén Cereijo Silva | Business &amp; Data · Strategy · Analytics · Finance">
+  <meta property="og:description" data-i18n-attr="content:meta.description" content="Personal portfolio of Belén Cereijo Silva. Final-year Business Administration &amp; Data Science student at ESIC University.">
+  <meta property="og:image" content="assets/avatar-poster.jpg">
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="index">
+
+  <!-- Background Ambient Pastel Blobs -->
+  <div class="ambient-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+  </div>
+
+  <!-- Sticky Header & Navigation -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Belén Cereijo Silva Home">
+        <span class="nav-brand-name">Belén Cereijo Silva</span>
+        <span class="nav-brand-sub" data-i18n="hero.headline">Business &amp; Data · Strategy · Analytics · Finance</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-menu" id="navMenu" role="navigation" aria-label="Primary Navigation">
+        <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+        <a href="#values" class="nav-link nav-desktop-hide" data-i18n="nav.values">Values</a>
+        <a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a>
+        <a href="#recommendation" class="nav-link" data-i18n="nav.recommendation">Reference</a>
+        <a href="#volunteering" class="nav-link" data-i18n="nav.volunteering">Volunteering</a>
+        <a href="#education" class="nav-link nav-desktop-hide" data-i18n="nav.education">Education</a>
+        <a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a>
+        <a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a>
+        <a href="#beyond" class="nav-link" data-i18n="nav.beyond">Beyond Classroom</a>
+        <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Language Switcher EN | ES -->
+        <div class="lang-selector" role="group" aria-label="Language Selector">
+          <button type="button" class="lang-btn active" id="langEnBtn" aria-label="Switch to English" onclick="setLanguage('en')">EN</button>
+          <button type="button" class="lang-btn" id="langEsBtn" aria-label="Cambiar a Español" onclick="setLanguage('es')">ES</button>
+        </div>
+
+        <!-- Download CV Action in Nav -->
+        <a href="assets/CV_Belen_Cereijo_EN.pdf" id="navCvBtn" class="btn btn-outline btn-sm" download aria-label="Download CV" data-i18n="nav.downloadCv">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="nav.downloadCv">Download CV</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="navMenu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+
+    <!-- =======================================================================
+         1. HERO SECTION (With Video Integration)
+         ======================================================================= -->
+    <section class="section hero-section" id="hero" aria-labelledby="heroTitle">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Hero Text Details -->
+          <div class="hero-content fade-in-element">
+            <div class="hero-badge-row">
+              <span class="section-tag blue">Portfolio 2026/27</span>
+              <span class="section-tag green">Available June 2027</span>
+            </div>
+
+            <h1 class="hero-name" id="heroTitle" data-i18n="hero.name">Belén Cereijo Silva</h1>
+            <p class="hero-headline" data-i18n="hero.headline">Business &amp; Data · Strategy · Analytics · Finance</p>
+            <p class="hero-tagline" data-i18n="hero.tagline">I connect business and data to turn uncertainty into concrete decisions.</p>
+            
+            <p class="hero-small-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span data-i18n="hero.smallLine">Madrid · Open to strategy and data consulting roles in London and Spain · Available from June 2027</span>
+            </p>
+
+            <div class="hero-buttons">
+              <a href="assets/CV_Belen_Cereijo_EN.pdf" id="heroCvBtn" class="btn btn-primary" download>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span data-i18n="hero.btnDownloadCv">Download CV</span>
+              </a>
+
+              <a href="https://linkedin.com/in/belen-cereijo-silva-esic" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                <span data-i18n="hero.btnLinkedIn">LinkedIn</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Video Card (Responsive presentation video) -->
+          <div class="hero-video-wrapper fade-in-element">
+            <div class="video-container">
+              <div class="video-header-badge">
+                <span class="video-pulse-dot" aria-hidden="true"></span>
+                <span data-i18n="hero.videoBadge">Video Introduction</span>
+              </div>
+              <video 
+                id="introVideo" 
+                class="video-player" 
+                controls 
+                preload="metadata" 
+                playsinline 
+                poster="assets/avatar-poster.jpg"
+                aria-label="Introduction video of Belén Cereijo Silva" 
+                data-i18n-attr="aria-label:hero.videoAria">
+                <source src="assets/avatar-belen.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-caption" data-i18n="hero.videoCaption">AI avatar · script written by me</div>
+          </div>
+
+        </div>
+
+        <!-- 3 Highlights Stat Cards -->
+        <div class="hero-highlights fade-in-element">
+          <div class="stat-card card-blue">
+            <div class="stat-number" data-i18n="hero.stat1Number">9.63/10</div>
+            <div class="stat-label" data-i18n="hero.stat1Label">GPA · Excellence Award</div>
+          </div>
+          <div class="stat-card card-pink">
+            <div class="stat-number" data-i18n="hero.stat2Number">Tier-1 bank</div>
+            <div class="stat-label" data-i18n="hero.stat2Label">Advanced Analytics experience</div>
+          </div>
+          <a href="#volunteering" class="stat-card card-green" aria-label="View volunteering initiatives">
+            <div class="stat-number" data-i18n="hero.stat3Number">Volunteer</div>
+            <div class="stat-label" data-i18n="hero.stat3Label">Since 2024</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         2. ABOUT SECTION & "HOW I WORK"
+         ======================================================================= -->
+    <section class="section about-section" id="about" aria-labelledby="aboutTitle">
+      <div class="container">
+        <div class="section-header fade-in-element">
+          <span class="section-tag pink" data-i18n="about.sectionTag">About</span>
+          <h2 class="section-title" id="aboutTitle" data-i18n="about.sectionTitle">About Me</h2>
+          <p class="section-subtitle" data-i18n="about.sectionSubtitle">Bridging quantitative rigor and business strategy</p>
+        </div>
+
+        <div class="about-card fade-in-element">
+          <!-- About Narrative -->
+          <article class="about-content">
+            <p data-i18n="about.p1">
+              I connect business and data to turn uncertainty into concrete decisions. I'm in the final year of a BA in Business Administration &amp; Management with a minor in Data Science at ESIC University (9.63/10 GPA, Excellence Award, Honour Roll), now focused on Machine Learning and applied AI.
+            </p>
+            <p data-i18n="about.p2">
+              As a Strategic Data Analyst Intern at Management Solutions, I worked in the Advanced Analytics team of a Tier-1 Spanish bank, analysing the SME segment across all of the group's markets. My main project was measuring the impact of a predictive credit model through an A/B test, processing millions of records on AWS. The results were inconclusive, and instead of assuming our analysis was wrong, I organised and led a meeting with the Risk team to trace where the data came from. We found an error in one of the source tables that explained the results. I then took sole ownership of the follow-up: I analysed the impact of that error, found further errors in other tables and presented the final report to the client. It taught me to always ask what a decision is really resting on.
+            </p>
+            <div class="about-offer-highlight" data-i18n="about.offer">
+              Management Solutions offered me a full-time position conditional on completing my degree — the clearest sign that the trust they placed in me paid off.
+            </div>
+            <p data-i18n="about.p3">
+              I enjoy problems where strategy, finance and data meet, and I'm looking to bring that to strategy and data consulting in London or Spain.
+            </p>
+          </article>
+
+          <!-- "How I Work" 3 Mini-Cards -->
+          <div class="how-i-work-box">
+            <h3 class="how-i-work-title" data-i18n="about.howIWorkTitle">How I Work</h3>
+            <div class="how-i-work-grid">
+              <div class="work-card">
+                <div class="work-title" data-i18n="about.work1Title">Efficiency by design</div>
+                <div class="work-desc" data-i18n="about.work1Desc">I always look for ways to cut the time a task takes, often by automating it.</div>
+              </div>
+              <div class="work-card">
+                <div class="work-title" data-i18n="about.work2Title">Split by strength</div>
+                <div class="work-desc" data-i18n="about.work2Desc">In team projects I usually take the lead and divide the work by each person's expertise.</div>
+              </div>
+              <div class="work-card">
+                <div class="work-title" data-i18n="about.work3Title">Milestones, not deadlines</div>
+                <div class="work-desc" data-i18n="about.work3Desc">I set intermediate checkpoints so problems show up early.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         3. VALUES SECTION ("How I live these values")
+         ======================================================================= -->
+    <section class="section values-section" id="values" aria-labelledby="valuesTitle">
+      <div class="container">
+        <div class="section-header fade-in-element">
+          <span class="section-tag lilac" data-i18n="values.sectionTag">Core Principles</span>
+          <h2 class="section-title" id="valuesTitle" data-i18n="values.sectionTitle">How I Live These Values</h2>
+          <p class="section-subtitle" data-i18n="values.sectionSubtitle">Three principles that guide how I work, learn and collaborate</p>
+        </div>
+
+        <div class="values-grid">
+          
+          <!-- Card 1: Entrepreneurship -->
+          <div class="value-card card-pink fade-in-element">
+            <h3 class="value-title" data-i18n="values.card1Title">Entrepreneurship</h3>
+            <p class="value-definition" data-i18n="values.card1Definition">"Owning the problem and making things happen."</p>
+            <ul class="value-list">
+              <li data-i18n="values.card1B1">Co-organised an afterwork event at Mendrugo from planning to execution: 96.3% attendance, 21.6% conversion, €1,350 revenue.</li>
+              <li data-i18n="values.card1B2">Co-led One More Step, a D2C footwear business plan (9.7/10), leading the 5-year financial model.</li>
+              <li data-i18n="values.card1B3">At Management Solutions, took sole ownership of a follow-up analysis and presented it to the client.</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Excellence -->
+          <div class="value-card card-blue fade-in-element">
+            <h3 class="value-title" data-i18n="values.card2Title">Excellence</h3>
+            <p class="value-definition" data-i18n="values.card2Definition">"Rigour first: checking what a decision actually rests on."</p>
+            <ul class="value-list">
+              <li data-i18n="values.card2B1">9.63/10 GPA, Excellence Award and Honour Roll.</li>
+              <li data-i18n="values.card2B2">When results were inconclusive, went back to the source, uncovered an error in a source table and then found further errors in other tables.</li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Empathy -->
+          <div class="value-card card-lilac fade-in-element">
+            <h3 class="value-title" data-i18n="values.card3Title">Empathy</h3>
+            <p class="value-definition" data-i18n="values.card3Definition">"Understanding the person on the other side."</p>
+            <ul class="value-list">
+              <li data-i18n="values.card3B1">Led a volunteering project for the Santa María de la Paz homeless shelter and helped collect supplies for people affected by the DANA floods in Valencia.</li>
+              <li data-i18n="values.card3B2">Tutored Accounting, Finance, Maths and Sciences for almost 3 years, adapting to each student's learning style.</li>
+              <li data-i18n="values.card3B3">Reworked a client report after feedback that it was too technical for its audience, adapting the message to the people who had to act on it.</li>
+              <li data-i18n="values.card3B4">Customer-facing sales role at El Corte Inglés, tailoring service to each client.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         3. EXPERIENCE SECTION
+         ======================================================================= -->
+    <section class="section experience-section" id="experience" aria-labelledby="experienceTitle">
+      <div class="container">
+        <div class="section-header fade-in-element">
+          <span class="section-tag blue" data-i18n="nav.experience">Experience</span>
+          <h2 class="section-title" id="experienceTitle" data-i18n="experience.sectionTitle">Professional Experience</h2>
+          <p class="section-subtitle" data-i18n="experience.sectionSubtitle">Impact in analytics, client work and leadership</p>
+        </div>
+
+        <div class="timeline">
+          <!-- 1. Management Solutions (Featured) -->
+          <div class="timeline-item fade-in-element">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-card featured">
+              <div class="timeline-header">
+                <div>
+                  <span class="section-tag lilac" data-i18n="experience.featuredBadge">Featured Role</span>
+                  <h3 class="role-title" data-i18n="experience.ms.role">Strategic Data Analyst Intern</h3>
+                  <div class="company-name" data-i18n="experience.ms.company">Management Solutions</div>
+                </div>
+                <div class="role-meta">
+                  <span data-i18n="experience.ms.location">Madrid</span> · <span data-i18n="experience.ms.period">Jul 2025 – Mar 2026</span>
+                </div>
+              </div>
+
+              <ul class="timeline-list">
+                <li data-i18n="experience.ms.b1">Worked in the Advanced Analytics team of a Tier-1 Spanish bank, analysing the SME segment for the group's holding team across all its markets.</li>
+                <li data-i18n="experience.ms.b2">Ran the monthly SME analyses, built Sankey flow visualisations and merged notebooks from several team members into a single monthly process.</li>
+              </ul>
+
+              <!-- Deep Dive: Impact Analysis of a Predictive Credit Model -->
+              <div class="impact-subcard">
+                <div class="impact-header">
+                  <span class="impact-badge">Deep Dive</span>
+                  <h4 class="impact-title" data-i18n="experience.ms.impactTitle">Impact analysis of a predictive credit model</h4>
+                </div>
+                <ul class="timeline-list">
+                  <li data-i18n="experience.ms.impactB1">Defined and coded <strong>KPIs</strong> to measure the model's impact on customers' credit behaviour through an A/B test (pilot vs. control, thousands of customers).</li>
+                  <li data-i18n="experience.ms.impactB2">Processed <strong>millions of records</strong> on AWS using SQL (Athena) and PySpark.</li>
+                  <li data-i18n="experience.ms.impactB3">Prepared a report for the client's digital sales team to help explain falling product sign-ups, which received very positive feedback.</li>
+                  <li data-i18n="experience.ms.impactB4">Organised and led a meeting with the Risk team that uncovered an error in a source table and explained the inconclusive results.</li>
+                  <li data-i18n="experience.ms.impactB5">Took sole ownership of the follow-up analysis on the error's impact, found further errors in other tables and presented the final report to the client.</li>
+                </ul>
+              </div>
+
+              <a href="#recommendation" class="experience-ref-link" data-i18n="experience.ms.refLink">See recommendation letter →</a>
+            </div>
+          </div>
+
+          <!-- 2. Mendrugo -->
+          <div class="timeline-item fade-in-element">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-card compact">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title" data-i18n="experience.mendrugo.role">Event Organiser</h3>
+                  <div class="company-name" data-i18n="experience.mendrugo.company">Mendrugo</div>
+                </div>
+                <div class="role-meta">
+                  <span data-i18n="experience.mendrugo.location">Madrid</span> · <span data-i18n="experience.mendrugo.period">Sep – Dec 2025</span>
+                </div>
+              </div>
+              <p data-i18n="experience.mendrugo.desc">
+                Co-organised an afterwork event at Mendrugo for the Entrepreneurship course, reaching a <strong>96.3% attendance rate, a 21.6% conversion rate and €1,350 in revenue</strong>.
+              </p>
+            </div>
+          </div>
+
+          <!-- 3. Private Tutoring -->
+          <div class="timeline-item fade-in-element">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-card compact">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title" data-i18n="experience.tutoring.role">Tutor</h3>
+                  <div class="company-name" data-i18n="experience.tutoring.company">Private Tutoring</div>
+                </div>
+                <div class="role-meta">
+                  <span data-i18n="experience.tutoring.location">Madrid</span> · <span data-i18n="experience.tutoring.period">Oct 2022 – Jun 2025</span>
+                </div>
+              </div>
+              <p data-i18n="experience.tutoring.desc">
+                Tutored Accounting, Finance, Maths and Sciences, adapting to each student's learning style.
+              </p>
+            </div>
+          </div>
+
+          <!-- 4. Sales Assistant: October S.L. at El Corte Inglés -->
+          <div class="timeline-item fade-in-element">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-card compact">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title" data-i18n="experience.october.role">Sales Assistant</h3>
+                  <div class="company-name" data-i18n="experience.october.company">October S.L. at El Corte Inglés</div>
+                </div>
+                <div class="role-meta">
+                  <span data-i18n="experience.october.location">Madrid</span> · <span data-i18n="experience.october.period">Aug 2024</span>
+                </div>
+              </div>
+              <p data-i18n="experience.october.desc">
+                Customer-facing role, tailoring service to different client needs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         RECOMMENDATION LETTER SECTION
+         ======================================================================= -->
+    <section class="section section-recommendation" id="recommendation" aria-labelledby="recommendationTitle">
+      <div class="container">
+        <div class="section-header text-center fade-in-element">
+          <span class="section-tag lilac" data-i18n="recommendation.sectionTag">Recommendation</span>
+          <h2 class="section-title" id="recommendationTitle" data-i18n="recommendation.sectionTitle">Recommendation Letter</h2>
+          <p class="section-subtitle" data-i18n="recommendation.sectionSubtitle">Assessment from my internship supervisor at Management Solutions</p>
+        </div>
+
+        <div class="recommendation-card fade-in-element">
+          <div class="quote-icon" aria-hidden="true">“</div>
+          
+          <blockquote class="main-quote-box">
+            <p class="main-quote-text" data-i18n="recommendation.mainQuote">These qualities go well beyond technical data work, and I would describe them as consulting qualities in the fullest sense: reliability under real client pressure, sound judgement about when to take initiative and when to ask, and a level of ownership that made her someone I trusted with tasks of real consequence to the project.</p>
+            <p class="quote-translation" data-i18n="recommendation.quoteTranslation"></p>
+          </blockquote>
+
+          <div class="recommender-profile">
+            <div class="recommender-avatar-placeholder" aria-hidden="true">JG</div>
+            <div class="recommender-info">
+              <h3 class="recommender-name" data-i18n="recommendation.authorName">Javier Antonio Gisbert Mariscal</h3>
+              <p class="recommender-role" data-i18n="recommendation.authorRole">Senior Data Scientist, Management Solutions · my internship supervisor</p>
+            </div>
+          </div>
+
+          <div class="eval-chips-container">
+            <span class="eval-chips-label" data-i18n="recommendation.evalLabel">Highlighted in my final evaluation</span>
+            <div class="eval-chips-list">
+              <span class="eval-chip" data-i18n="recommendation.chip1">Adaptability</span>
+              <span class="eval-chip" data-i18n="recommendation.chip2">Organisation</span>
+              <span class="eval-chip" data-i18n="recommendation.chip3">Curiosity</span>
+              <span class="eval-chip" data-i18n="recommendation.chip4">Autonomy</span>
+            </div>
+          </div>
+
+          <div class="secondary-quotes-grid">
+            <div class="secondary-quote-card">
+              <p class="secondary-quote-text" data-i18n="recommendation.secQuote1">"She also showed a genuine, proactive curiosity about the business beyond her immediate tasks."</p>
+            </div>
+            <div class="secondary-quote-card">
+              <p class="secondary-quote-text" data-i18n="recommendation.secQuote2">"Belén proactively organised and led a meeting with that team to get to the bottom of it, without being asked to."</p>
+            </div>
+          </div>
+
+          <div class="recommendation-actions">
+            <a href="assets/recommendation-letter.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-i18n="recommendation.btnPdf">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Read the full letter (PDF)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         GIVING BACK / VOLUNTEERING SECTION
+         ======================================================================= -->
+    <section class="section section-volunteering" id="volunteering" aria-labelledby="volunteeringTitle">
+      <div class="container">
+        <div class="section-header text-center fade-in-element">
+          <span class="section-tag green" data-i18n="volunteering.sectionTag">Social Impact</span>
+          <h2 class="section-title" id="volunteeringTitle" data-i18n="volunteering.sectionTitle">Giving Back</h2>
+          <p class="section-subtitle" data-i18n="volunteering.sectionSubtitle">Leadership, community engagement and social impact initiatives</p>
+        </div>
+
+        <div class="volunteering-container fade-in-element">
+          <!-- Featured Card: Learning & Service Project -->
+          <div class="volunteering-featured-card">
+            <div class="volunteering-header">
+              <h3 class="volunteering-title" data-i18n="volunteering.featuredTitle">Learning &amp; Service Project · ESIC University · Sep 2024 – May 2026</h3>
+            </div>
+            <p class="volunteering-desc" data-i18n="volunteering.featuredDesc">
+              I led a multidisciplinary team to give visibility to the Santa María de la Paz homeless shelter. I organised the team's tasks and coordinated directly with our ESIC tutor and the shelter's director, and together we produced videos to tell the shelter's story and reach more people.
+            </p>
+            <div class="volunteering-tags">
+              <span class="volunteering-tag" data-i18n="volunteering.tag1">Leadership</span>
+              <span class="volunteering-tag" data-i18n="volunteering.tag2">Coordination</span>
+              <span class="volunteering-tag" data-i18n="volunteering.tag3">Storytelling</span>
+              <span class="volunteering-tag" data-i18n="volunteering.tag4">Social impact</span>
+            </div>
+          </div>
+
+          <!-- Smaller Card: Volunteering Days -->
+          <div class="volunteering-small-card">
+            <h3 class="volunteering-small-title" data-i18n="volunteering.smallTitle">Volunteering days · ESIC University</h3>
+            <p class="volunteering-small-desc" data-i18n="volunteering.smallDesc">
+              Regular participant in ESIC's one-day volunteering initiatives, including collecting supplies for people affected by the DANA floods in Valencia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. EDUCATION SECTION
+         ======================================================================= -->
+    <section class="section education-section" id="education" aria-labelledby="educationTitle">
+      <div class="container">
+        <div class="section-header fade-in-element">
+          <span class="section-tag green" data-i18n="nav.education">Education</span>
+          <h2 class="section-title" id="educationTitle" data-i18n="education.sectionTitle">Education &amp; Academic Track</h2>
+          <p class="section-subtitle" data-i18n="education.sectionSubtitle">Excellence in business management, quantitative methods and analytical foundations</p>
+        </div>
+
+        <div class="education-grid">
+          
+          <!-- ESIC University -->
+          <div class="edu-card highlight-card fade-in-element">
+            <div>
+              <div class="edu-meta-top">
+                <span class="edu-institution" data-i18n="education.esic.institution">ESIC University</span>
+                <span class="edu-period" data-i18n="education.esic.period">Sep 2022 – May 2027</span>
+              </div>
+              <h3 class="edu-degree" data-i18n="education.esic.degree">BA Business Administration &amp; Management, minor in Data Science</h3>
+              <div class="edu-highlight-box" data-i18n="education.esic.highlight">
+                <strong>9.63/10 GPA</strong> · Excellence Award · Honour Roll Award · <strong>18 courses with highest distinction</strong>
+              </div>
+              <p class="edu-details" data-i18n="education.esic.role">
+                Class delegate (2nd and 4th year) and member of the degree curriculum committee
+              </p>
+            </div>
+            <div class="coursework-badge-box">
+              <strong data-i18n="education.esic.courseworkTitle">Relevant 2026/27 coursework:</strong>
+              <p data-i18n="education.esic.coursework">Artificial Intelligence &amp; Neural Networks, Natural Language Processing (Chatbots), Predictive Models (online churn, sentiment analysis), Categorical Variable Modelling, Big Data Applications II–IV</p>
+            </div>
+          </div>
+
+          <!-- IMC Krems -->
+          <div class="edu-card fade-in-element">
+            <div>
+              <div class="edu-meta-top">
+                <span class="edu-institution" data-i18n="education.krems.institution">IMC Krems University of Applied Sciences</span>
+                <span class="edu-period" data-i18n="education.krems.period">Jan – Jun 2025</span>
+              </div>
+              <h3 class="edu-degree" data-i18n="education.krems.degree">Exchange Semester</h3>
+              <p class="edu-details" data-i18n="education.krems.desc">
+                Courses across several degree programmes: Principles of Business Data Analysis, International Financial Management, Accounting II, Doing Business Abroad.
+              </p>
+            </div>
+            <div class="coursework-badge-box">
+              <span>Krems, Austria · International Academic Exchange</span>
+            </div>
+          </div>
+
+          <!-- Colegio Nuestra Señora de Loreto -->
+          <div class="edu-card fade-in-element">
+            <div>
+              <div class="edu-meta-top">
+                <span class="edu-institution" data-i18n="education.loreto.institution">Colegio Nuestra Señora de Loreto</span>
+                <span class="edu-period" data-i18n="education.loreto.period">2020 – 2022</span>
+              </div>
+              <h3 class="edu-degree" data-i18n="education.loreto.degree">Bachillerato (Sciences)</h3>
+              <div class="edu-highlight-box" data-i18n="education.loreto.desc">
+                9.76/10 average and 12.63/14 in the university entrance exam (EvAU)
+              </div>
+            </div>
+            <div class="coursework-badge-box">
+              <span>Madrid · Scientific High School Track</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. PROJECTS SECTION (3 Projects - No duplicates)
+         ======================================================================= -->
+    <section class="section projects-section" id="projects" aria-labelledby="projectsTitle">
+      <div class="container">
+        <div class="section-header fade-in-element">
+          <span class="section-tag lilac" data-i18n="nav.projects">Projects</span>
+          <h2 class="section-title" id="projectsTitle" data-i18n="projects.sectionTitle">Key Projects</h2>
+          <p class="section-subtitle" data-i18n="projects.sectionSubtitle">Applied analytics, financial modelling and automation</p>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- Project 1: One More Step -->
+          <div class="project-card fade-in-element">
+            <div class="project-top">
+              <div class="project-header-row">
+                <h3 class="project-title" data-i18n="projects.p1.title">One More Step — Final Degree Project (Business Plan)</h3>
+              </div>
+              <p class="project-desc" data-i18n="projects.p1.desc">
+                Co-led a business plan for a direct-to-consumer footwear brand, <strong>graded 9.7/10</strong>. I led the financial plan, building a 5-year financial model in Excel.
+              </p>
+              <div class="project-tags">
+                <span class="tag-pill accent-blue">Financial modelling</span>
+                <span class="tag-pill accent-pink">Excel</span>
+                <span class="tag-pill accent-lilac">Strategy</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Predicting Student GPA with Machine Learning -->
+          <div class="project-card fade-in-element">
+            <div class="project-top">
+              <div class="project-header-row">
+                <h3 class="project-title" data-i18n="projects.p2.title">Predicting Student GPA with Machine Learning</h3>
+              </div>
+              <div class="project-subtitle" data-i18n="projects.p2.subtitle">Big Data Applications I, ESIC</div>
+              <p class="project-desc" data-i18n="projects.p2.desc">
+                Built a Python pipeline on a 1M-row, 42-variable dataset, covering exploratory analysis, cleaning and outlier treatment. Ran multicollinearity analysis and feature selection, trained a linear regression model (<strong>test R² of 0.88</strong>) and exposed it as a REST API using FastAPI.
+              </p>
+              <div class="project-tags">
+                <span class="tag-pill accent-blue">Python</span>
+                <span class="tag-pill accent-green">scikit-learn</span>
+                <span class="tag-pill accent-lilac">Regression</span>
+                <span class="tag-pill accent-pink">FastAPI</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: AI literacy, used responsibly -->
+          <div class="project-card fade-in-element">
+            <div class="project-top">
+              <div class="project-header-row">
+                <h3 class="project-title" data-i18n="projects.p3.title">AI literacy, used responsibly</h3>
+              </div>
+              <div class="project-subtitle" data-i18n="projects.p3.subtitle">Workflows &amp; Applied Artificial Intelligence</div>
+              <p class="project-desc" data-i18n="projects.p3.desc">
+                I use AI to work faster, not to think less. I automate workflows with Claude (e.g. a custom skill that tailors my CV to each job description), Gemini and Google Antigravity agents, and I always review and verify the output. This website itself was built with an AI agent.
+              </p>
+              <div class="project-tags">
+                <span class="tag-pill accent-lilac">AI agents</span>
+                <span class="tag-pill accent-green">Automation</span>
+                <span class="tag-pill accent-blue">Responsible AI</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. SKILLS SECTION (Grouped Chips with Finance & Strategy First)
+         ======================================================================= -->
+    <section class="section skills-section" id="skills" aria-labelledby="skillsTitle">
+      <div class="container">
+        <div class="section-header fade-in-element">
+          <span class="section-tag blue" data-i18n="nav.skills">Skills</span>
+          <h2 class="section-title" id="skillsTitle" data-i18n="skills.sectionTitle">Skills &amp; Capabilities</h2>
+          <p class="section-subtitle" data-i18n="skills.sectionSubtitle">Technical toolset, quantitative methodologies and domain expertise</p>
+        </div>
+
+        <div class="skills-container">
+          
+          <!-- Group 1: Finance & Strategy (NEW FIRST GROUP) -->
+          <div class="skill-group-card featured-skills fade-in-element">
+            <div class="skill-group-title" data-i18n="skills.groupFinanceTitle">Finance &amp; Strategy</div>
+            <div class="chips-wrapper" id="skillsGroupFinance">
+              <span class="skill-chip">Financial modelling (5-year business plan model)</span>
+              <span class="skill-chip">Business planning</span>
+              <span class="skill-chip">Advanced Excel (Microsoft Office Expert certification)</span>
+            </div>
+          </div>
+
+          <!-- Group 2: Programming & Data -->
+          <div class="skill-group-card fade-in-element">
+            <div class="skill-group-title" data-i18n="skills.group1Title">Programming &amp; Data</div>
+            <div class="chips-wrapper" id="skillsGroup1">
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">SQL</span>
+              <span class="skill-chip">PySpark</span>
+              <span class="skill-chip">R</span>
+            </div>
+          </div>
+
+          <!-- Group 3: Machine Learning & Statistics -->
+          <div class="skill-group-card fade-in-element">
+            <div class="skill-group-title" data-i18n="skills.group2Title">Machine Learning &amp; Statistics</div>
+            <div class="chips-wrapper" id="skillsGroup2">
+              <span class="skill-chip">model training and evaluation (scikit-learn)</span>
+              <span class="skill-chip">regression and classification</span>
+              <span class="skill-chip">feature engineering</span>
+              <span class="skill-chip">multicollinearity analysis</span>
+              <span class="skill-chip">A/B testing</span>
+            </div>
+          </div>
+
+          <!-- Group 4: Cloud & Deployment -->
+          <div class="skill-group-card fade-in-element">
+            <div class="skill-group-title" data-i18n="skills.group3Title">Cloud &amp; Deployment</div>
+            <div class="chips-wrapper" id="skillsGroup3">
+              <span class="skill-chip">AWS (S3, Athena)</span>
+              <span class="skill-chip">Azure (AZ-900 and AI-900 certifications)</span>
+              <span class="skill-chip">FastAPI</span>
+              <span class="skill-chip">Git (basic)</span>
+            </div>
+          </div>
+
+          <!-- Group 5: Visualisation (Renamed from Tools, without Excel) -->
+          <div class="skill-group-card fade-in-element">
+            <div class="skill-group-title" data-i18n="skills.groupToolsTitle">Visualisation</div>
+            <div class="chips-wrapper" id="skillsGroupTools">
+              <span class="skill-chip">Power BI</span>
+              <span class="skill-chip">Tableau</span>
+            </div>
+          </div>
+
+          <!-- Group 6: AI Tools -->
+          <div class="skill-group-card fade-in-element">
+            <div class="skill-group-title" data-i18n="skills.group5Title">AI Tools</div>
+            <div class="chips-wrapper" id="skillsGroup5">
+              <span class="skill-chip">Claude (workflow automation)</span>
+              <span class="skill-chip">Gemini</span>
+              <span class="skill-chip">Google Antigravity (AI agents)</span>
+            </div>
+          </div>
+
+          <!-- Group 7: Languages -->
+          <div class="skill-group-card fade-in-element">
+            <div class="skill-group-title" data-i18n="skills.group6Title">Languages / Idiomas</div>
+            <div class="chips-wrapper" id="skillsGroup6">
+              <span class="skill-chip">Spanish (native)</span>
+              <span class="skill-chip">English (C2)</span>
+              <span class="skill-chip">German (beginner)</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         8. BEYOND THE CLASSROOM SECTION (9 Cards + Outside Work Strip)
+         ======================================================================= -->
+    <section class="section beyond-section" id="beyond" aria-labelledby="beyondTitle">
+      <div class="container">
+        <div class="section-header fade-in-element">
+          <span class="section-tag pink" data-i18n="nav.beyond">Beyond Classroom</span>
+          <h2 class="section-title" id="beyondTitle" data-i18n="beyond.sectionTitle">Beyond the Classroom</h2>
+          <p class="section-subtitle" data-i18n="beyond.sectionSubtitle">Initiatives, leadership and continuous curiosity outside academic coursework</p>
+        </div>
+
+        <!-- 9 Colourful Mini-Cards Grid -->
+        <div class="beyond-grid-9">
+          
+          <!-- 1. Class Delegate -->
+          <div class="beyond-mini-card accent-blue fade-in-element">
+            <div class="beyond-mini-header">
+              <div class="beyond-mini-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 class="beyond-mini-title" data-i18n="beyond.card1Title">Class delegate</h3>
+            </div>
+            <p class="beyond-mini-desc" data-i18n="beyond.card1Desc">2nd and 4th year, ESIC.</p>
+          </div>
+
+          <!-- 2. Curriculum Committee -->
+          <div class="beyond-mini-card accent-lilac fade-in-element">
+            <div class="beyond-mini-header">
+              <div class="beyond-mini-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+              </div>
+              <h3 class="beyond-mini-title" data-i18n="beyond.card2Title">Curriculum committee</h3>
+            </div>
+            <p class="beyond-mini-desc" data-i18n="beyond.card2Desc">Proposed changes to course content and format.</p>
+          </div>
+
+          <!-- 5. Mendrugo event -->
+          <div class="beyond-mini-card accent-blue fade-in-element">
+            <div class="beyond-mini-header">
+              <div class="beyond-mini-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </div>
+              <h3 class="beyond-mini-title" data-i18n="beyond.card5Title">Mendrugo event</h3>
+            </div>
+            <p class="beyond-mini-desc" data-i18n="beyond.card5Desc">Co-organised from planning to execution (€1,350 revenue).</p>
+          </div>
+
+          <!-- 6. Exchange in Austria -->
+          <div class="beyond-mini-card accent-lilac fade-in-element">
+            <div class="beyond-mini-header">
+              <div class="beyond-mini-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <h3 class="beyond-mini-title" data-i18n="beyond.card6Title">Exchange in Austria</h3>
+            </div>
+            <p class="beyond-mini-desc" data-i18n="beyond.card6Desc">IMC Krems: courses across several degree programmes, incl. Intercultural Competence and German for Beginners.</p>
+          </div>
+
+          <!-- 7. KPMG Women at the Top -->
+          <div class="beyond-mini-card accent-green fade-in-element">
+            <div class="beyond-mini-header">
+              <div class="beyond-mini-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1v-2.34"/><path d="M14 14.66V17c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-2.34"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+              </div>
+              <h3 class="beyond-mini-title" data-i18n="beyond.card7Title">KPMG Women at the Top</h3>
+            </div>
+            <p class="beyond-mini-desc" data-i18n="beyond.card7Desc">Invited by KPMG to its Women at the Top programmes (Audit, two years; STEM).</p>
+          </div>
+
+          <!-- 8. Writing on LinkedIn -->
+          <div class="beyond-mini-card accent-pink fade-in-element">
+            <div class="beyond-mini-header">
+              <div class="beyond-mini-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+              </div>
+              <h3 class="beyond-mini-title" data-i18n="beyond.card8Title">Writing on LinkedIn</h3>
+            </div>
+            <p class="beyond-mini-desc" data-i18n="beyond.card8Desc">Posts on data storytelling, data trust and AI.</p>
+          </div>
+
+          <!-- 9. This website -->
+          <div class="beyond-mini-card accent-blue fade-in-element">
+            <div class="beyond-mini-header">
+              <div class="beyond-mini-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 8 3 3-3 3"/><path d="M14 15h3"/></svg>
+              </div>
+              <h3 class="beyond-mini-title" data-i18n="beyond.card9Title">This website</h3>
+            </div>
+            <p class="beyond-mini-desc" data-i18n="beyond.card9Desc">Built by me with an AI agent.</p>
+          </div>
+
+        </div>
+
+        <!-- Outside Work Horizontal Strip -->
+        <div class="outside-work-box fade-in-element">
+          <h3 class="outside-work-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+            <span data-i18n="beyond.outsideWorkTitle">Outside Work</span>
+          </h3>
+          <div class="outside-work-chips">
+            <span class="outside-chip">🎸 <span data-i18n="beyond.outside1">Guitar &amp; piano</span></span>
+            <span class="outside-chip">🎨 <span data-i18n="beyond.outside2">Watercolour, now learning oil painting</span></span>
+            <span class="outside-chip">✍️ <span data-i18n="beyond.outside3">Creative writing</span></span>
+            <span class="outside-chip">🎾 <span data-i18n="beyond.outside4">Tennis — started last year to step out of my comfort zone</span></span>
+            <span class="outside-chip">🏋️ <span data-i18n="beyond.outside5">Strength training</span></span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         9. CONTACT SECTION
+         ======================================================================= -->
+    <section class="section contact-section" id="contact" aria-labelledby="contactTitle">
+      <div class="container">
+        <div class="section-header fade-in-element">
+          <span class="section-tag green" data-i18n="nav.contact">Contact</span>
+          <h2 class="section-title" id="contactTitle" data-i18n="contact.sectionTitle">Contact &amp; Opportunities</h2>
+        </div>
+
+        <div class="contact-card-main fade-in-element">
+          <p class="contact-pitch" data-i18n="contact.headline">
+            Let's talk. I'm open to graduate roles in strategy and data consulting in London and Spain, starting June 2027.
+          </p>
+
+          <div class="contact-channels-grid">
+            <!-- Email -->
+            <a href="mailto:bcereijosilva@gmail.com" class="channel-box">
+              <div class="channel-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div class="channel-meta">
+                <span class="channel-label" data-i18n="contact.emailLabel">Email</span>
+                <span class="channel-value" data-i18n="contact.emailValue">bcereijosilva@gmail.com</span>
+              </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/belen-cereijo-silva-esic" target="_blank" rel="noopener noreferrer" class="channel-box">
+              <div class="channel-icon pink">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              </div>
+              <div class="channel-meta">
+                <span class="channel-label" data-i18n="contact.linkedInLabel">LinkedIn Profile</span>
+                <span class="channel-value" data-i18n="contact.linkedInBtn">Connect on LinkedIn</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- CV Download Block (Clean without placeholder alert) -->
+          <div class="cv-download-card">
+            <div class="cv-download-header">
+              <div>
+                <h4 class="cv-download-title" data-i18n="contact.cvSectionTitle">Curriculum Vitae</h4>
+              </div>
+              <div class="cv-actions-row">
+                <a href="assets/CV_Belen_Cereijo_EN.pdf" id="contactCvBtn" class="btn btn-primary" download>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  <span data-i18n="contact.downloadActiveCv">Download CV (English - Active)</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="cv-actions-row">
+              <a href="assets/CV_Belen_Cereijo_EN.pdf" class="btn btn-outline btn-sm" download>
+                <span data-i18n="contact.downloadEnCv">Download CV in English (PDF)</span>
+              </a>
+              <a href="assets/CV_Belen_Cereijo_ES.pdf" class="btn btn-outline btn-sm" download>
+                <span data-i18n="contact.downloadEsCv">Descargar CV en Español (PDF)</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-content">
+      <div data-i18n="footer.rights">Belén Cereijo Silva · 2026/2027</div>
+      <div data-i18n="footer.builtWith">Designed by me, built with an AI agent in Google Antigravity.</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
