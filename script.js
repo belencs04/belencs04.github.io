@@ -10,9 +10,9 @@
 
 let currentLang = 'en';
 
-// Helper to determine if current page is the tailored Roland Berger page
+// Helper to determine if current page is the tailored Roland Berger page (legacy fallback)
 function isRbPage() {
-  return document.body.dataset.page === 'rb' || window.location.pathname.toLowerCase().endsWith('rb.html');
+  return false;
 }
 
 // Helper to resolve nested keys like "hero.headline" from translations object
@@ -108,6 +108,210 @@ function updateCvLinks(lang) {
   });
 }
 
+// Tab definitions and section alias mapping
+const TAB_DEFINITIONS = ['about', 'experience', 'education', 'projects', 'beyond', 'contact'];
+
+const SECTION_TO_TAB_MAP = {
+  // About tab
+  'hero': { tab: 'about', section: 'hero' },
+  'about': { tab: 'about', section: 'about' },
+  'values': { tab: 'about', section: 'values' },
+
+  // Experience tab
+  'experience': { tab: 'experience', section: 'experience' },
+  'recommendation': { tab: 'experience', section: 'recommendation' },
+
+  // Education tab
+  'education': { tab: 'education', section: 'education' },
+
+  // Projects & Skills tab
+  'projects': { tab: 'projects', section: 'projects' },
+  'skills': { tab: 'projects', section: 'skills' },
+
+  // Beyond tab (4 subsections + Outside Work)
+  'beyond': { tab: 'beyond', section: 'beyond' },
+  'beyond-initiative': { tab: 'beyond', section: 'beyond-initiative' },
+  'beyond-ai': { tab: 'beyond', section: 'beyond-ai' },
+  'beyond-other': { tab: 'beyond', section: 'beyond-other' },
+  'beyond-social': { tab: 'beyond', section: 'beyond-social' },
+  'volunteering': { tab: 'beyond', section: 'beyond-social' },
+  'social-commitment': { tab: 'beyond', section: 'beyond-social' },
+  'outside-work': { tab: 'beyond', section: 'outside-work' },
+
+  // Contact tab
+  'contact': { tab: 'contact', section: 'contact' }
+};
+
+// Switch active tab and optionally scroll to specific section
+function switchTab(tabId, targetSectionId = null, shouldScroll = true) {
+  if (!TAB_DEFINITIONS.includes(tabId)) {
+    tabId = 'about';
+  }
+
+  // Pause any currently playing videos across all tabs
+  document.querySelectorAll('video').forEach((v) => {
+    try {
+      if (!v.paused) {
+        v.pause();
+      }
+    } catch (_) {}
+  });
+
+  // Update tab panels
+  TAB_DEFINITIONS.forEach((t) => {
+    const panel = document.getElementById(`tabpanel-${t}`);
+    const tabLink = document.getElementById(`tab-${t}`);
+    const isActive = t === tabId;
+
+    if (panel) {
+      if (isActive) {
+        panel.removeAttribute('hidden');
+        panel.classList.add('is-active');
+        // Ensure fade-in elements within the active tab are immediately visible
+        panel.querySelectorAll('.fade-in-element').forEach((el) => {
+          el.classList.add('is-visible');
+        });
+      } else {
+        panel.setAttribute('hidden', '');
+        panel.classList.remove('is-active');
+      }
+    }
+
+    if (tabLink) {
+      tabLink.classList.toggle('active', isActive);
+      tabLink.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      tabLink.setAttribute('tabindex', isActive ? '0' : '-1');
+    }
+  });
+
+  // Close mobile menu if open
+  const menu = document.getElementById('navMenu');
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  if (menu && menu.classList.contains('is-open')) {
+    menu.classList.remove('is-open');
+    if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  // Handle scrolling with a brief, smooth transition
+  if (shouldScroll) {
+    if (targetSectionId && targetSectionId !== tabId && targetSectionId !== 'hero') {
+      setTimeout(() => {
+        const targetEl = document.getElementById(targetSectionId);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 50);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+}
+
+// Handle routing from URL hash
+function handleHash(hashString, shouldScroll = true) {
+  const cleanHash = (hashString || '').replace(/^#/, '').trim().toLowerCase();
+
+  if (!cleanHash) {
+    switchTab('about', null, false);
+    return;
+  }
+
+  if (SECTION_TO_TAB_MAP[cleanHash]) {
+    const { tab, section } = SECTION_TO_TAB_MAP[cleanHash];
+    switchTab(tab, section, shouldScroll);
+  } else if (TAB_DEFINITIONS.includes(cleanHash)) {
+    switchTab(cleanHash, null, shouldScroll);
+  } else {
+    switchTab('about', null, false);
+  }
+}
+
+// Initialize tab click and keyboard navigation (Accessible Tablist)
+function initTabNavigation() {
+  const tablist = document.getElementById('navMenu');
+  if (!tablist) return;
+
+  const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+
+  // Click on tabs
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', (e) => {
+      const href = tab.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const tabName = tab.getAttribute('data-tab') || href.substring(1);
+        if (window.location.hash !== `#${tabName}`) {
+          window.location.hash = `#${tabName}`;
+        } else {
+          handleHash(tabName, true);
+        }
+      }
+    });
+  });
+
+  // Keyboard navigation for tablist (WAI-ARIA Pattern)
+  tablist.addEventListener('keydown', (e) => {
+    const currentTab = document.activeElement;
+    const currentIndex = tabs.indexOf(currentTab);
+    if (currentIndex === -1) return;
+
+    let targetIndex = null;
+
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      e.preventDefault();
+      targetIndex = (currentIndex + 1) % tabs.length;
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      targetIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      targetIndex = 0;
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      targetIndex = tabs.length - 1;
+    }
+
+    if (targetIndex !== null) {
+      const targetTab = tabs[targetIndex];
+      targetTab.focus();
+      const tabName = targetTab.getAttribute('data-tab');
+      if (tabName) {
+        window.location.hash = `#${tabName}`;
+      }
+    }
+  });
+
+  // Listen to browser Back / Forward buttons
+  window.addEventListener('hashchange', () => {
+    handleHash(window.location.hash, true);
+  });
+}
+
+// Intercept internal page anchor links to switch to the corresponding tab
+function initInternalLinks() {
+  document.addEventListener('click', (e) => {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (!anchor) return;
+
+    // Skip tab items (handled in initTabNavigation)
+    if (anchor.getAttribute('role') === 'tab') return;
+
+    const href = anchor.getAttribute('href');
+    if (!href || href === '#' || href === '#!') return;
+
+    const targetId = href.substring(1).toLowerCase();
+
+    if (SECTION_TO_TAB_MAP[targetId] || TAB_DEFINITIONS.includes(targetId)) {
+      e.preventDefault();
+      if (window.location.hash !== href) {
+        window.location.hash = href;
+      } else {
+        handleHash(targetId, true);
+      }
+    }
+  });
+}
+
 // Mobile menu toggle
 function initMobileMenu() {
   const btn = document.getElementById('mobileMenuBtn');
@@ -116,41 +320,8 @@ function initMobileMenu() {
 
   btn.addEventListener('click', () => {
     const isOpen = menu.classList.toggle('is-open');
-    btn.setAttribute('aria-expanded', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
-
-  // Close when clicking nav links
-  menu.querySelectorAll('.nav-link').forEach((link) => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('is-open');
-      btn.setAttribute('aria-expanded', 'false');
-    });
-  });
-}
-
-// Active navigation spy with IntersectionObserver
-function initActiveNavSpy() {
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '-20% 0px -65% 0px',
-    threshold: 0
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach((link) => {
-          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-        });
-      }
-    });
-  }, observerOptions);
-
-  sections.forEach((section) => observer.observe(section));
 }
 
 // Subtle scroll reveal animations
@@ -172,6 +343,64 @@ function initScrollAnimations() {
   elements.forEach((el) => observer.observe(el));
 }
 
+// Image Lightbox Viewer
+function initLightbox() {
+  const modal = document.getElementById('imageLightbox');
+  if (!modal) return;
+  const imgEl = document.getElementById('lightboxImg');
+  const capEl = document.getElementById('lightboxCaption');
+  const closeBtn = document.getElementById('lightboxCloseBtn');
+  const backdrop = document.getElementById('lightboxBackdrop');
+
+  function openLightbox(src, alt, caption) {
+    if (!imgEl) return;
+    imgEl.src = src;
+    imgEl.alt = alt || '';
+    if (capEl) capEl.textContent = caption || alt || '';
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeBtn?.focus();
+  }
+
+  function closeLightbox() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (imgEl) imgEl.src = '';
+  }
+
+  document.querySelectorAll('.photo-clickable').forEach((wrapper) => {
+    wrapper.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A' || e.target.closest('a')) return;
+      const img = wrapper.querySelector('img');
+      if (!img) return;
+      const caption = wrapper.querySelector('.card-photo-caption span')?.textContent || img.alt;
+      const fullSrc = wrapper.dataset.fullSrc || img.src;
+      openLightbox(fullSrc, img.alt, caption);
+    });
+
+    wrapper.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const img = wrapper.querySelector('img');
+        if (!img) return;
+        const caption = wrapper.querySelector('.card-photo-caption span')?.textContent || img.alt;
+        const fullSrc = wrapper.dataset.fullSrc || img.src;
+        openLightbox(fullSrc, img.alt, caption);
+      }
+    });
+  });
+
+  closeBtn?.addEventListener('click', closeLightbox);
+  backdrop?.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+}
+
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
   // Check persisted language preference or default to 'en'
@@ -180,6 +409,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Setup UI components
   initMobileMenu();
-  initActiveNavSpy();
+  initTabNavigation();
+  initInternalLinks();
   initScrollAnimations();
+  initLightbox();
+
+  // Initial tab resolution based on URL hash or default to 'about'
+  handleHash(window.location.hash, false);
 });

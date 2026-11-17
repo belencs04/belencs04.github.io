@@ -33,23 +33,18 @@
   <!-- Sticky Header & Navigation -->
   <header class="site-header" role="banner">
     <div class="container nav-container">
-      <a href="#hero" class="nav-brand" aria-label="Belén Cereijo Silva Home">
-        <span class="nav-brand-name">Belén Cereijo Silva</span>
-        <span class="nav-brand-sub" data-i18n="hero.headline">Business &amp; Data · Strategy · Analytics · Finance</span>
+      <a href="#about" class="nav-brand" aria-label="Belén Cereijo – Beyond business">
+        <img src="assets/Logo-BCS-header.png" alt="Belén Cereijo – Beyond business" class="nav-logo" height="56">
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="nav-menu" id="navMenu" role="navigation" aria-label="Primary Navigation">
-        <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
-        <a href="#values" class="nav-link nav-desktop-hide" data-i18n="nav.values">Values</a>
-        <a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a>
-        <a href="#recommendation" class="nav-link" data-i18n="nav.recommendation">Reference</a>
-        <a href="#volunteering" class="nav-link" data-i18n="nav.volunteering">Volunteering</a>
-        <a href="#education" class="nav-link nav-desktop-hide" data-i18n="nav.education">Education</a>
-        <a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a>
-        <a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a>
-        <a href="#beyond" class="nav-link" data-i18n="nav.beyond">Beyond Classroom</a>
-        <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+      <!-- Desktop Nav (6 Accessible Tabs) -->
+      <nav class="nav-menu" id="navMenu" role="tablist" aria-label="Primary Navigation">
+        <a href="#about" role="tab" class="nav-link active" id="tab-about" aria-selected="true" aria-controls="tabpanel-about" data-tab="about" data-i18n="nav.about">About</a>
+        <a href="#experience" role="tab" class="nav-link" id="tab-experience" aria-selected="false" aria-controls="tabpanel-experience" data-tab="experience" tabindex="-1" data-i18n="nav.experience">Experience</a>
+        <a href="#education" role="tab" class="nav-link" id="tab-education" aria-selected="false" aria-controls="tabpanel-education" data-tab="education" tabindex="-1" data-i18n="nav.education">Education</a>
+        <a href="#projects" role="tab" class="nav-link" id="tab-projects" aria-selected="false" aria-controls="tabpanel-projects" data-tab="projects" tabindex="-1" data-i18n="nav.projectsSkills">Projects &amp; Skills</a>
+        <a href="#beyond" role="tab" class="nav-link" id="tab-beyond" aria-selected="false" aria-controls="tabpanel-beyond" data-tab="beyond" tabindex="-1" data-i18n="nav.beyond">Beyond</a>
+        <a href="#contact" role="tab" class="nav-link" id="tab-contact" aria-selected="false" aria-controls="tabpanel-contact" data-tab="contact" tabindex="-1" data-i18n="nav.contact">Contact</a>
       </nav>
 
       <div class="nav-actions">
@@ -76,22 +71,27 @@
   <main id="mainContent">
 
     <!-- =======================================================================
-         1. HERO SECTION (With Video Integration)
+         TAB 1: ABOUT (Hero, About, How I Work, Values)
          ======================================================================= -->
-    <section class="section hero-section" id="hero" aria-labelledby="heroTitle">
-      <div class="container">
-        <div class="hero-grid">
-          
-          <!-- Hero Text Details -->
-          <div class="hero-content fade-in-element">
-            <div class="hero-badge-row">
-              <span class="section-tag blue">Portfolio 2026/27</span>
-              <span class="section-tag green">Available June 2027</span>
-            </div>
+    <div class="tab-panel is-active" id="tabpanel-about" role="tabpanel" aria-labelledby="tab-about">
+
+      <!-- =======================================================================
+           1. HERO SECTION (With Video Integration)
+           ======================================================================= -->
+      <section class="section hero-section" id="hero" aria-labelledby="heroTitle">
+        <div class="container">
+          <div class="hero-grid">
+            
+            <!-- Hero Text Details -->
+            <div class="hero-content fade-in-element">
+              <div class="hero-badge-row">
+                <span class="section-tag blue" data-i18n="hero.badgePortfolio">PORTFOLIO 2026/27</span>
+                <span class="section-tag green" data-i18n="hero.badgeAvailable">AVAILABLE JUNE 2027</span>
+              </div>
 
             <h1 class="hero-name" id="heroTitle" data-i18n="hero.name">Belén Cereijo Silva</h1>
             <p class="hero-headline" data-i18n="hero.headline">Business &amp; Data · Strategy · Analytics · Finance</p>
-            <p class="hero-tagline" data-i18n="hero.tagline">I connect business and data to turn uncertainty into concrete decisions.</p>
+            <p class="hero-tagline" data-i18n="hero.tagline">Bridging quantitative rigor and business strategy to drive concrete decisions.</p>
             
             <p class="hero-small-line">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -111,27 +111,28 @@
             </div>
           </div>
 
-          <!-- Hero Video Card (Responsive presentation video) -->
+          <!-- Hero Video Card (Tab 1 About: 16:9 Presentation Video) -->
           <div class="hero-video-wrapper fade-in-element">
             <div class="video-container">
               <div class="video-header-badge">
                 <span class="video-pulse-dot" aria-hidden="true"></span>
-                <span data-i18n="hero.videoBadge">Video Introduction</span>
+                <span data-i18n="hero.videoCaption">AI avatar</span>
               </div>
               <video 
-                id="introVideo" 
+                id="video-about" 
                 class="video-player" 
                 controls 
-                preload="metadata" 
+                preload="none" 
                 playsinline 
-                poster="assets/avatar-poster.jpg"
-                aria-label="Introduction video of Belén Cereijo Silva" 
+                poster="assets/poster-about.jpg"
+                aria-label="Introduction video of Belén Cereijo Silva - About" 
                 data-i18n-attr="aria-label:hero.videoAria">
-                <source src="assets/avatar-belen.mp4" type="video/mp4">
+                <source src="assets/video-about.mp4" type="video/mp4">
+                <track kind="subtitles" src="assets/video-about.en.vtt" srclang="en" label="English">
                 Your browser does not support HTML5 video.
               </video>
             </div>
-            <div class="video-caption" data-i18n="hero.videoCaption">AI avatar · script written by me</div>
+            <div class="video-caption" data-i18n="hero.videoCaption">AI avatar</div>
           </div>
 
         </div>
@@ -139,12 +140,12 @@
         <!-- 3 Highlights Stat Cards -->
         <div class="hero-highlights fade-in-element">
           <div class="stat-card card-blue">
-            <div class="stat-number" data-i18n="hero.stat1Number">9.63/10</div>
+            <div class="stat-number" data-i18n="hero.stat1Number">9.61/10</div>
             <div class="stat-label" data-i18n="hero.stat1Label">GPA · Excellence Award</div>
           </div>
           <div class="stat-card card-pink">
             <div class="stat-number" data-i18n="hero.stat2Number">Tier-1 bank</div>
-            <div class="stat-label" data-i18n="hero.stat2Label">Advanced Analytics experience</div>
+            <div class="stat-label" data-i18n="hero.stat2Label">Consulting & Advanced Analytics</div>
           </div>
           <a href="#volunteering" class="stat-card card-green" aria-label="View volunteering initiatives">
             <div class="stat-number" data-i18n="hero.stat3Number">Volunteer</div>
@@ -168,11 +169,14 @@
         <div class="about-card fade-in-element">
           <!-- About Narrative -->
           <article class="about-content">
+            <p class="about-opening" data-i18n="about.opening">
+              I turn uncertainty into concrete decisions by connecting business and data.
+            </p>
             <p data-i18n="about.p1">
-              I connect business and data to turn uncertainty into concrete decisions. I'm in the final year of a BA in Business Administration &amp; Management with a minor in Data Science at ESIC University (9.63/10 GPA, Excellence Award, Honour Roll), now focused on Machine Learning and applied AI.
+              I'm in the final year of a BA in Business Administration &amp; Management with a minor in Data Science at ESIC University (9.61/10 GPA, Excellence Award, Honour Roll), now focused on Machine Learning and applied AI.
             </p>
             <p data-i18n="about.p2">
-              As a Strategic Data Analyst Intern at Management Solutions, I worked in the Advanced Analytics team of a Tier-1 Spanish bank, analysing the SME segment across all of the group's markets. My main project was measuring the impact of a predictive credit model through an A/B test, processing millions of records on AWS. The results were inconclusive, and instead of assuming our analysis was wrong, I organised and led a meeting with the Risk team to trace where the data came from. We found an error in one of the source tables that explained the results. I then took sole ownership of the follow-up: I analysed the impact of that error, found further errors in other tables and presented the final report to the client. It taught me to always ask what a decision is really resting on.
+              As a Strategic Data Analyst Intern at the consulting firm Management Solutions, I worked as a consultant for a Tier-1 Spanish bank client, collaborating within their Advanced Analytics team to analyse the SME segment across all of the group's markets. My main project was measuring the impact of a predictive credit model through an A/B test, processing millions of records on AWS. The results were inconclusive, and instead of assuming our analysis was wrong, I organised and led a meeting with the client's Risk team to trace where the data came from. We found an error in one of the source tables that explained the results. I then took sole ownership of the follow-up: I analysed the impact of that error, found further errors in other tables and presented the final report to the client. It taught me to always ask what a decision is really resting on.
             </p>
             <div class="about-offer-highlight" data-i18n="about.offer">
               Management Solutions offered me a full-time position conditional on completing my degree — the clearest sign that the trust they placed in me paid off.
@@ -234,7 +238,7 @@
             <h3 class="value-title" data-i18n="values.card2Title">Excellence</h3>
             <p class="value-definition" data-i18n="values.card2Definition">"Rigour first: checking what a decision actually rests on."</p>
             <ul class="value-list">
-              <li data-i18n="values.card2B1">9.63/10 GPA, Excellence Award and Honour Roll.</li>
+              <li data-i18n="values.card2B1">9.61/10 GPA, Excellence Award and Honour Roll.</li>
               <li data-i18n="values.card2B2">When results were inconclusive, went back to the source, uncovered an error in a source table and then found further errors in other tables.</li>
             </ul>
           </div>
@@ -254,16 +258,46 @@
         </div>
       </div>
     </section>
+    </div>
+    <!-- End Tab Panel: About -->
+
+    <!-- =======================================================================
+         TAB 2: EXPERIENCE (Experience, Recommendation)
+         ======================================================================= -->
+    <div class="tab-panel" id="tabpanel-experience" role="tabpanel" aria-labelledby="tab-experience" hidden>
 
     <!-- =======================================================================
          3. EXPERIENCE SECTION
          ======================================================================= -->
     <section class="section experience-section" id="experience" aria-labelledby="experienceTitle">
       <div class="container">
-        <div class="section-header fade-in-element">
-          <span class="section-tag blue" data-i18n="nav.experience">Experience</span>
-          <h2 class="section-title" id="experienceTitle" data-i18n="experience.sectionTitle">Professional Experience</h2>
-          <p class="section-subtitle" data-i18n="experience.sectionSubtitle">Impact in analytics, client work and leadership</p>
+        <div class="tab-intro-row fade-in-element">
+          <div class="tab-intro-header">
+            <span class="section-tag blue" data-i18n="nav.experience">Experience</span>
+            <h2 class="section-title" id="experienceTitle" data-i18n="experience.sectionTitle">Professional Experience</h2>
+            <p class="section-subtitle" data-i18n="experience.sectionSubtitle">Impact in analytics, client work and leadership</p>
+          </div>
+          <div class="tab-video-wrapper">
+            <div class="video-container">
+              <div class="video-header-badge">
+                <span class="video-pulse-dot" aria-hidden="true"></span>
+                <span data-i18n="hero.videoCaption">AI avatar</span>
+              </div>
+              <video 
+                id="video-experience" 
+                class="video-player" 
+                controls 
+                preload="none" 
+                playsinline 
+                poster="assets/poster-experience.jpg"
+                aria-label="Experience overview video of Belén Cereijo Silva">
+                <source src="assets/video-experience.mp4" type="video/mp4">
+                <track kind="subtitles" src="assets/video-experience.en.vtt" srclang="en" label="English">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-caption" data-i18n="hero.videoCaption">AI avatar</div>
+          </div>
         </div>
 
         <div class="timeline">
@@ -275,7 +309,7 @@
                 <div>
                   <span class="section-tag lilac" data-i18n="experience.featuredBadge">Featured Role</span>
                   <h3 class="role-title" data-i18n="experience.ms.role">Strategic Data Analyst Intern</h3>
-                  <div class="company-name" data-i18n="experience.ms.company">Management Solutions</div>
+                  <div class="company-name" data-i18n="experience.ms.company">Management Solutions (Consulting · Client: Tier-1 Spanish Bank)</div>
                 </div>
                 <div class="role-meta">
                   <span data-i18n="experience.ms.location">Madrid</span> · <span data-i18n="experience.ms.period">Jul 2025 – Mar 2026</span>
@@ -283,8 +317,8 @@
               </div>
 
               <ul class="timeline-list">
-                <li data-i18n="experience.ms.b1">Worked in the Advanced Analytics team of a Tier-1 Spanish bank, analysing the SME segment for the group's holding team across all its markets.</li>
-                <li data-i18n="experience.ms.b2">Ran the monthly SME analyses, built Sankey flow visualisations and merged notebooks from several team members into a single monthly process.</li>
+                <li data-i18n="experience.ms.b1">Worked as a consultant for a Tier-1 Spanish bank client, collaborating within their Advanced Analytics team to analyse the SME segment for the group's holding team across all its markets.</li>
+                <li data-i18n="experience.ms.b2">Ran monthly SME analyses for the client, built Sankey flow visualisations and merged notebooks from several team members into a single monthly process.</li>
               </ul>
 
               <!-- Deep Dive: Impact Analysis of a Predictive Credit Model -->
@@ -297,7 +331,7 @@
                   <li data-i18n="experience.ms.impactB1">Defined and coded <strong>KPIs</strong> to measure the model's impact on customers' credit behaviour through an A/B test (pilot vs. control, thousands of customers).</li>
                   <li data-i18n="experience.ms.impactB2">Processed <strong>millions of records</strong> on AWS using SQL (Athena) and PySpark.</li>
                   <li data-i18n="experience.ms.impactB3">Prepared a report for the client's digital sales team to help explain falling product sign-ups, which received very positive feedback.</li>
-                  <li data-i18n="experience.ms.impactB4">Organised and led a meeting with the Risk team that uncovered an error in a source table and explained the inconclusive results.</li>
+                  <li data-i18n="experience.ms.impactB4">Organised and led a meeting with the client's Risk team that uncovered an error in a source table and explained the inconclusive results.</li>
                   <li data-i18n="experience.ms.impactB5">Took sole ownership of the follow-up analysis on the error's impact, found further errors in other tables and presented the final report to the client.</li>
                 </ul>
               </div>
@@ -322,6 +356,17 @@
               <p data-i18n="experience.mendrugo.desc">
                 Co-organised an afterwork event at Mendrugo for the Entrepreneurship course, reaching a <strong>96.3% attendance rate, a 21.6% conversion rate and €1,350 in revenue</strong>.
               </p>
+              <div class="timeline-photo-wrapper photo-clickable" tabindex="0" role="button" aria-label="View full Mendrugo event photo" data-full-src="assets/mendrugo-event.jpg">
+                <span class="photo-zoom-badge">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  <span data-i18n="beyond.zoomPhoto">Full view</span>
+                </span>
+                <img src="assets/mendrugo-event-crop.jpg" alt="Mendrugo Event" loading="lazy">
+                <div class="card-photo-caption">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                  <span data-i18n="experience.mendrugo.photoCaption">Mendrugo Event</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -422,55 +467,46 @@
         </div>
       </div>
     </section>
+    </div>
+    <!-- End Tab Panel: Experience -->
 
     <!-- =======================================================================
-         GIVING BACK / VOLUNTEERING SECTION
+         TAB 3: EDUCATION (Education)
          ======================================================================= -->
-    <section class="section section-volunteering" id="volunteering" aria-labelledby="volunteeringTitle">
-      <div class="container">
-        <div class="section-header text-center fade-in-element">
-          <span class="section-tag green" data-i18n="volunteering.sectionTag">Social Impact</span>
-          <h2 class="section-title" id="volunteeringTitle" data-i18n="volunteering.sectionTitle">Giving Back</h2>
-          <p class="section-subtitle" data-i18n="volunteering.sectionSubtitle">Leadership, community engagement and social impact initiatives</p>
-        </div>
-
-        <div class="volunteering-container fade-in-element">
-          <!-- Featured Card: Learning & Service Project -->
-          <div class="volunteering-featured-card">
-            <div class="volunteering-header">
-              <h3 class="volunteering-title" data-i18n="volunteering.featuredTitle">Learning &amp; Service Project · ESIC University · Sep 2024 – May 2026</h3>
-            </div>
-            <p class="volunteering-desc" data-i18n="volunteering.featuredDesc">
-              I led a multidisciplinary team to give visibility to the Santa María de la Paz homeless shelter. I organised the team's tasks and coordinated directly with our ESIC tutor and the shelter's director, and together we produced videos to tell the shelter's story and reach more people.
-            </p>
-            <div class="volunteering-tags">
-              <span class="volunteering-tag" data-i18n="volunteering.tag1">Leadership</span>
-              <span class="volunteering-tag" data-i18n="volunteering.tag2">Coordination</span>
-              <span class="volunteering-tag" data-i18n="volunteering.tag3">Storytelling</span>
-              <span class="volunteering-tag" data-i18n="volunteering.tag4">Social impact</span>
-            </div>
-          </div>
-
-          <!-- Smaller Card: Volunteering Days -->
-          <div class="volunteering-small-card">
-            <h3 class="volunteering-small-title" data-i18n="volunteering.smallTitle">Volunteering days · ESIC University</h3>
-            <p class="volunteering-small-desc" data-i18n="volunteering.smallDesc">
-              Regular participant in ESIC's one-day volunteering initiatives, including collecting supplies for people affected by the DANA floods in Valencia.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="tab-panel" id="tabpanel-education" role="tabpanel" aria-labelledby="tab-education" hidden>
 
     <!-- =======================================================================
          5. EDUCATION SECTION
          ======================================================================= -->
     <section class="section education-section" id="education" aria-labelledby="educationTitle">
       <div class="container">
-        <div class="section-header fade-in-element">
-          <span class="section-tag green" data-i18n="nav.education">Education</span>
-          <h2 class="section-title" id="educationTitle" data-i18n="education.sectionTitle">Education &amp; Academic Track</h2>
-          <p class="section-subtitle" data-i18n="education.sectionSubtitle">Excellence in business management, quantitative methods and analytical foundations</p>
+        <div class="tab-intro-row fade-in-element">
+          <div class="tab-intro-header">
+            <span class="section-tag green" data-i18n="nav.education">Education</span>
+            <h2 class="section-title" id="educationTitle" data-i18n="education.sectionTitle">Education &amp; Academic Track</h2>
+            <p class="section-subtitle" data-i18n="education.sectionSubtitle">Excellence in business management, quantitative methods and analytical foundations</p>
+          </div>
+          <div class="tab-video-wrapper">
+            <div class="video-container">
+              <div class="video-header-badge">
+                <span class="video-pulse-dot" aria-hidden="true"></span>
+                <span data-i18n="hero.videoCaption">AI avatar</span>
+              </div>
+              <video 
+                id="video-education" 
+                class="video-player" 
+                controls 
+                preload="none" 
+                playsinline 
+                poster="assets/poster-education.jpg"
+                aria-label="Education overview video of Belén Cereijo Silva">
+                <source src="assets/video-education.mp4" type="video/mp4">
+                <track kind="subtitles" src="assets/video-education.en.vtt" srclang="en" label="English">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-caption" data-i18n="hero.videoCaption">AI avatar</div>
+          </div>
         </div>
 
         <div class="education-grid">
@@ -484,7 +520,7 @@
               </div>
               <h3 class="edu-degree" data-i18n="education.esic.degree">BA Business Administration &amp; Management, minor in Data Science</h3>
               <div class="edu-highlight-box" data-i18n="education.esic.highlight">
-                <strong>9.63/10 GPA</strong> · Excellence Award · Honour Roll Award · <strong>18 courses with highest distinction</strong>
+                <strong>9.61/10 GPA</strong> · Excellence Award · Honour Roll Award · <strong>18 courses with highest distinction</strong>
               </div>
               <p class="edu-details" data-i18n="education.esic.role">
                 Class delegate (2nd and 4th year) and member of the degree curriculum committee
@@ -533,16 +569,46 @@
         </div>
       </div>
     </section>
+    </div>
+    <!-- End Tab Panel: Education -->
+
+    <!-- =======================================================================
+         TAB 4: PROJECTS & SKILLS (Projects, Skills)
+         ======================================================================= -->
+    <div class="tab-panel" id="tabpanel-projects" role="tabpanel" aria-labelledby="tab-projects" hidden>
 
     <!-- =======================================================================
          6. PROJECTS SECTION (3 Projects - No duplicates)
          ======================================================================= -->
     <section class="section projects-section" id="projects" aria-labelledby="projectsTitle">
       <div class="container">
-        <div class="section-header fade-in-element">
-          <span class="section-tag lilac" data-i18n="nav.projects">Projects</span>
-          <h2 class="section-title" id="projectsTitle" data-i18n="projects.sectionTitle">Key Projects</h2>
-          <p class="section-subtitle" data-i18n="projects.sectionSubtitle">Applied analytics, financial modelling and automation</p>
+        <div class="tab-intro-row fade-in-element">
+          <div class="tab-intro-header">
+            <span class="section-tag lilac" data-i18n="nav.projectsSkills">Projects &amp; Skills</span>
+            <h2 class="section-title" id="projectsTitle" data-i18n="projects.sectionTitle">Key Projects</h2>
+            <p class="section-subtitle" data-i18n="projects.sectionSubtitle">Applied analytics, financial modelling and automation</p>
+          </div>
+          <div class="tab-video-wrapper">
+            <div class="video-container">
+              <div class="video-header-badge">
+                <span class="video-pulse-dot" aria-hidden="true"></span>
+                <span data-i18n="hero.videoCaption">AI avatar</span>
+              </div>
+              <video 
+                id="video-projects" 
+                class="video-player" 
+                controls 
+                preload="none" 
+                playsinline 
+                poster="assets/poster-projects.jpg"
+                aria-label="Projects overview video of Belén Cereijo Silva">
+                <source src="assets/video-projects.mp4" type="video/mp4">
+                <track kind="subtitles" src="assets/video-projects.en.vtt" srclang="en" label="English">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-caption" data-i18n="hero.videoCaption">AI avatar</div>
+          </div>
         </div>
 
         <div class="projects-grid">
@@ -597,6 +663,24 @@
                 <span class="tag-pill accent-lilac">AI agents</span>
                 <span class="tag-pill accent-green">Automation</span>
                 <span class="tag-pill accent-blue">Responsible AI</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Credit card fraud detection model (In progress) -->
+          <div class="project-card fade-in-element">
+            <div class="project-top">
+              <div class="project-header-row">
+                <h3 class="project-title" data-i18n="projects.fraud.title">Credit card fraud detection model</h3>
+                <span class="project-badge in-progress" data-i18n="projects.fraud.badge">In progress</span>
+              </div>
+              <p class="project-desc" data-i18n="projects.fraud.desc">
+                Currently building a machine learning model to detect credit card fraud.
+              </p>
+              <div class="project-tags">
+                <span class="tag-pill accent-blue">Python</span>
+                <span class="tag-pill accent-green">Machine Learning</span>
+                <span class="tag-pill accent-lilac">Classification</span>
               </div>
             </div>
           </div>
@@ -694,102 +778,282 @@
         </div>
       </div>
     </section>
+    </div>
+    <!-- End Tab Panel: Projects & Skills -->
 
     <!-- =======================================================================
-         8. BEYOND THE CLASSROOM SECTION (9 Cards + Outside Work Strip)
+         TAB 5: BEYOND (Taking Initiative, Using AI, Other Experiences, Social Commitment, Outside Work)
          ======================================================================= -->
+    <div class="tab-panel" id="tabpanel-beyond" role="tabpanel" aria-labelledby="tab-beyond" hidden>
+
     <section class="section beyond-section" id="beyond" aria-labelledby="beyondTitle">
       <div class="container">
-        <div class="section-header fade-in-element">
-          <span class="section-tag pink" data-i18n="nav.beyond">Beyond Classroom</span>
-          <h2 class="section-title" id="beyondTitle" data-i18n="beyond.sectionTitle">Beyond the Classroom</h2>
-          <p class="section-subtitle" data-i18n="beyond.sectionSubtitle">Initiatives, leadership and continuous curiosity outside academic coursework</p>
+        
+        <!-- Tab Intro Row: Header + Video Player -->
+        <div class="tab-intro-row fade-in-element">
+          <div class="tab-intro-header">
+            <span class="section-tag pink" data-i18n="nav.beyond">Beyond</span>
+            <h2 class="section-title" id="beyondTitle" data-i18n="beyond.sectionTitle">Beyond the Classroom</h2>
+            <p class="section-subtitle" data-i18n="beyond.sectionSubtitle">Initiatives, leadership and continuous curiosity outside academic coursework</p>
+          </div>
+          <div class="tab-video-wrapper">
+            <div class="video-container">
+              <div class="video-header-badge">
+                <span class="video-pulse-dot" aria-hidden="true"></span>
+                <span data-i18n="hero.videoCaption">AI avatar</span>
+              </div>
+              <video 
+                id="video-beyond" 
+                class="video-player" 
+                controls 
+                preload="none" 
+                playsinline 
+                poster="assets/poster-beyond.jpg"
+                aria-label="Beyond overview video of Belén Cereijo Silva">
+                <source src="assets/video-beyond.mp4" type="video/mp4">
+                <track kind="subtitles" src="assets/video-beyond.en.vtt" srclang="en" label="English">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-caption" data-i18n="hero.videoCaption">AI avatar</div>
+          </div>
         </div>
 
-        <!-- 9 Colourful Mini-Cards Grid -->
-        <div class="beyond-grid-9">
-          
-          <!-- 1. Class Delegate -->
-          <div class="beyond-mini-card accent-blue fade-in-element">
-            <div class="beyond-mini-header">
-              <div class="beyond-mini-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              </div>
-              <h3 class="beyond-mini-title" data-i18n="beyond.card1Title">Class delegate</h3>
-            </div>
-            <p class="beyond-mini-desc" data-i18n="beyond.card1Desc">2nd and 4th year, ESIC.</p>
-          </div>
+        <!-- 8.1 "Taking the initiative" / "Tomando la iniciativa" -->
+        <div class="beyond-subsection-block" id="beyond-initiative">
+          <h3 class="beyond-subheading">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <span data-i18n="beyond.sub1Title">Taking the initiative</span>
+          </h3>
 
-          <!-- 2. Curriculum Committee -->
-          <div class="beyond-mini-card accent-lilac fade-in-element">
-            <div class="beyond-mini-header">
-              <div class="beyond-mini-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+          <div class="beyond-cards-grid">
+            <!-- 1. Class Delegate -->
+            <div class="beyond-compact-card accent-blue fade-in-element">
+              <div class="beyond-card-header">
+                <div class="beyond-card-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h4 class="beyond-card-title" data-i18n="beyond.card1Title">Class delegate</h4>
               </div>
-              <h3 class="beyond-mini-title" data-i18n="beyond.card2Title">Curriculum committee</h3>
+              <p class="beyond-card-desc" data-i18n="beyond.card1Desc">2nd and 4th year, ESIC.</p>
             </div>
-            <p class="beyond-mini-desc" data-i18n="beyond.card2Desc">Proposed changes to course content and format.</p>
-          </div>
 
-          <!-- 5. Mendrugo event -->
-          <div class="beyond-mini-card accent-blue fade-in-element">
-            <div class="beyond-mini-header">
-              <div class="beyond-mini-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <!-- 2. Curriculum Committee (with ESIC logo) -->
+            <div class="beyond-compact-card accent-lilac fade-in-element">
+              <div class="beyond-card-header">
+                <div class="beyond-card-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+                </div>
+                <h4 class="beyond-card-title" data-i18n="beyond.card2Title">Curriculum committee</h4>
+                <img src="assets/esic-logo.png" alt="ESIC University logo" class="committee-logo" loading="lazy">
               </div>
-              <h3 class="beyond-mini-title" data-i18n="beyond.card5Title">Mendrugo event</h3>
+              <p class="beyond-card-desc" data-i18n="beyond.card2Desc">Proposed changes to course content and format.</p>
             </div>
-            <p class="beyond-mini-desc" data-i18n="beyond.card5Desc">Co-organised from planning to execution (€1,350 revenue).</p>
-          </div>
 
-          <!-- 6. Exchange in Austria -->
-          <div class="beyond-mini-card accent-lilac fade-in-element">
-            <div class="beyond-mini-header">
-              <div class="beyond-mini-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <!-- 3. Mendrugo event (photo & 3 stats) -->
+            <div class="beyond-card photo-card accent-blue fade-in-element">
+              <div class="featured-photo-wrapper photo-clickable" tabindex="0" role="button" aria-label="View full Mendrugo event photo" data-full-src="assets/mendrugo-event.jpg">
+                <span class="photo-zoom-badge">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  <span data-i18n="beyond.zoomPhoto">Full view</span>
+                </span>
+                <img src="assets/mendrugo-event-crop.jpg" alt="Mendrugo Event" loading="lazy">
               </div>
-              <h3 class="beyond-mini-title" data-i18n="beyond.card6Title">Exchange in Austria</h3>
-            </div>
-            <p class="beyond-mini-desc" data-i18n="beyond.card6Desc">IMC Krems: courses across several degree programmes, incl. Intercultural Competence and German for Beginners.</p>
-          </div>
-
-          <!-- 7. KPMG Women at the Top -->
-          <div class="beyond-mini-card accent-green fade-in-element">
-            <div class="beyond-mini-header">
-              <div class="beyond-mini-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1v-2.34"/><path d="M14 14.66V17c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-2.34"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+              <div class="card-photo-caption">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                <span data-i18n="beyond.mendrugoCaption">Mendrugo Event</span>
               </div>
-              <h3 class="beyond-mini-title" data-i18n="beyond.card7Title">KPMG Women at the Top</h3>
-            </div>
-            <p class="beyond-mini-desc" data-i18n="beyond.card7Desc">Invited by KPMG to its Women at the Top programmes (Audit, two years; STEM).</p>
-          </div>
-
-          <!-- 8. Writing on LinkedIn -->
-          <div class="beyond-mini-card accent-pink fade-in-element">
-            <div class="beyond-mini-header">
-              <div class="beyond-mini-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+              <div class="featured-card-body">
+                <div class="beyond-card-header">
+                  <div class="beyond-card-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                  </div>
+                  <h4 class="beyond-card-title" data-i18n="beyond.card5Title">Mendrugo event</h4>
+                </div>
+                <p class="beyond-card-desc" data-i18n="beyond.card5Desc">Co-organised from planning to execution (€1,350 revenue).</p>
+                <div class="featured-stat-chips">
+                  <span class="stat-pill">💶 <strong>€1,350</strong> <span data-i18n="beyond.statRev">revenue</span></span>
+                  <span class="stat-pill">👥 <strong>96.3%</strong> <span data-i18n="beyond.statAtt">attendance</span></span>
+                  <span class="stat-pill">📈 <strong>21.6%</strong> <span data-i18n="beyond.statConv">conversion</span></span>
+                </div>
               </div>
-              <h3 class="beyond-mini-title" data-i18n="beyond.card8Title">Writing on LinkedIn</h3>
             </div>
-            <p class="beyond-mini-desc" data-i18n="beyond.card8Desc">Posts on data storytelling, data trust and AI.</p>
-          </div>
 
-          <!-- 9. This website -->
-          <div class="beyond-mini-card accent-blue fade-in-element">
-            <div class="beyond-mini-header">
-              <div class="beyond-mini-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 8 3 3-3 3"/><path d="M14 15h3"/></svg>
+            <!-- 4. Hometown Festivities -->
+            <div class="beyond-compact-card accent-lilac fade-in-element">
+              <div class="beyond-card-header">
+                <div class="beyond-card-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <h4 class="beyond-card-title" data-i18n="beyond.cardHometownTitle">Hometown Festivities</h4>
               </div>
-              <h3 class="beyond-mini-title" data-i18n="beyond.card9Title">This website</h3>
+              <p class="beyond-card-desc" data-i18n="beyond.cardHometownDesc">Co-organised my hometown's festivities with friends for two consecutive years.</p>
             </div>
-            <p class="beyond-mini-desc" data-i18n="beyond.card9Desc">Built by me with an AI agent.</p>
           </div>
+        </div>
 
+        <!-- 8.2 "Using AI" / "Usando la IA" -->
+        <div class="beyond-subsection-block" id="beyond-ai">
+          <h3 class="beyond-subheading">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a8 8 0 0 0-8 8c0 3.36 2.07 6.23 5 7.42V20a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2.58c2.93-1.19 5-4.06 5-7.42a8 8 0 0 0-8-8z"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            <span data-i18n="beyond.sub2Title">Using AI</span>
+          </h3>
+
+          <div class="beyond-ai-grid">
+            <!-- Card a: This website -->
+            <div class="beyond-compact-card accent-blue fade-in-element">
+              <div class="beyond-card-header">
+                <div class="beyond-card-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 8 3 3-3 3"/><path d="M14 15h3"/></svg>
+                </div>
+                <h4 class="beyond-card-title" data-i18n="beyond.aiCard1Title">This website</h4>
+              </div>
+              <p class="beyond-card-desc" data-i18n="beyond.aiCard1Desc">
+                Designed by me and built with AI agents in Google Antigravity. I wrote the instructions, reviewed every version and decided the content and design. It is bilingual (EN/ES), responsive and hosted on GitHub Pages.
+              </p>
+              <div class="beyond-card-tags">
+                <span class="tag-pill accent-lilac">Google Antigravity</span>
+                <span class="tag-pill accent-blue">AI agents</span>
+                <span class="tag-pill accent-pink">HTML/CSS/JS</span>
+                <span class="tag-pill accent-green">GitHub Pages</span>
+              </div>
+            </div>
+
+            <!-- Card b: RAG assistant (class project) -->
+            <div class="beyond-compact-card accent-lilac fade-in-element">
+              <div class="beyond-card-header">
+                <div class="beyond-card-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                </div>
+                <h4 class="beyond-card-title" data-i18n="beyond.aiCard2Title">RAG assistant (class project)</h4>
+              </div>
+              <p class="beyond-card-desc" data-i18n="beyond.aiCard2Desc">
+                For a Data Science class, I built a retrieval-augmented generation (RAG) assistant that answers questions about my profile. It splits a document about me into sections, finds the most relevant ones with Gemini embeddings and cosine similarity, and Gemini answers using only those sections. It runs locally on my computer and answers in English or Spanish.
+              </p>
+              <div class="beyond-card-tags">
+                <span class="tag-pill accent-blue">RAG</span>
+                <span class="tag-pill accent-green">Gemini</span>
+                <span class="tag-pill accent-lilac">Embeddings</span>
+                <span class="tag-pill accent-pink">JavaScript</span>
+              </div>
+            </div>
+
+            <!-- Card c: My AI skills -->
+            <div class="beyond-compact-card accent-green fade-in-element">
+              <div class="beyond-card-header">
+                <div class="beyond-card-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="M2 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="M12 22v-4"/><path d="m19.07 19.07-2.83-2.83"/><path d="M22 12h-4"/><path d="m19.07 4.93-2.83 2.83"/></svg>
+                </div>
+                <h4 class="beyond-card-title" data-i18n="beyond.aiCard3Title">My AI skills</h4>
+              </div>
+              <p class="beyond-card-desc" data-i18n="beyond.aiCard3Desc">
+                I build custom Claude skills to automate recurring tasks: one tailors my CV to each job description without inventing experience, and others help me draft LinkedIn posts in my own style. I always review the output.
+              </p>
+              <div class="beyond-card-tags">
+                <span class="tag-pill accent-lilac">Claude</span>
+                <span class="tag-pill accent-pink">Custom skills</span>
+                <span class="tag-pill accent-blue">Automation</span>
+                <span class="tag-pill accent-green">Responsible AI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8.3 "Other experiences" / "Otras experiencias" -->
+        <div class="beyond-subsection-block" id="beyond-other">
+          <h3 class="beyond-subheading">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            <span data-i18n="beyond.sub3Title">Other experiences</span>
+          </h3>
+
+          <div class="beyond-cards-grid">
+            <!-- 1. Exchange in Austria -->
+            <div class="beyond-compact-card accent-lilac fade-in-element">
+              <div class="beyond-card-header">
+                <div class="beyond-card-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <h4 class="beyond-card-title" data-i18n="beyond.card6Title">Exchange in Austria</h4>
+              </div>
+              <p class="beyond-card-desc" data-i18n="beyond.card6Desc">IMC Krems: courses across several degree programmes, incl. Intercultural Competence and German for Beginners.</p>
+            </div>
+
+            <!-- 2. KPMG Women at the Top (with photo) -->
+            <div class="beyond-card photo-card accent-green fade-in-element">
+              <div class="featured-photo-wrapper photo-clickable" tabindex="0" role="button" aria-label="View full KPMG event photo">
+                <span class="photo-zoom-badge">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  <span data-i18n="beyond.zoomPhoto">Full view</span>
+                </span>
+                <img src="assets/kpmg-event.jpg" alt="Women at The Top STEM Event" loading="lazy">
+              </div>
+              <div class="card-photo-caption">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                <span data-i18n="beyond.kpmgCaption">Women at The Top STEM Event</span>
+              </div>
+              <div class="featured-card-body">
+                <div class="beyond-card-header">
+                  <div class="beyond-card-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1v-2.34"/><path d="M14 14.66V17c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-2.34"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                  </div>
+                  <h4 class="beyond-card-title" data-i18n="beyond.card7Title">KPMG Women at the Top</h4>
+                </div>
+                <p class="beyond-card-desc" data-i18n="beyond.card7Desc">Invited by KPMG to its Women at the Top programmes (Audit, two years; STEM).</p>
+              </div>
+            </div>
+
+            <!-- 3. Writing on LinkedIn -->
+            <div class="beyond-compact-card accent-pink fade-in-element">
+              <div class="beyond-card-header">
+                <div class="beyond-card-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                </div>
+                <h4 class="beyond-card-title" data-i18n="beyond.card8Title">Writing on LinkedIn</h4>
+              </div>
+              <p class="beyond-card-desc" data-i18n="beyond.card8Desc">Posts on data storytelling, data trust and AI.</p>
+              <a href="https://lnkd.in/p/eMZQ_7nW" target="_blank" rel="noopener noreferrer" class="beyond-text-link">
+                <span data-i18n="beyond.linkedinLink">Read on LinkedIn ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8.4 "Social commitment" / "Compromiso social" -->
+        <div class="beyond-subsection-block" id="beyond-social">
+          <h3 class="beyond-subheading" id="volunteering">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            <span data-i18n="beyond.sub4Title">Social commitment</span>
+          </h3>
+
+          <div class="volunteering-container fade-in-element">
+            <!-- Featured Card: Learning & Service Project -->
+            <div class="volunteering-featured-card">
+              <div class="volunteering-header">
+                <h4 class="volunteering-title" data-i18n="volunteering.featuredTitle">Learning &amp; Service Project · ESIC University · Sep 2024 – May 2026</h4>
+              </div>
+              <p class="volunteering-desc" data-i18n="volunteering.featuredDesc">
+                I led a multidisciplinary team to give visibility to the Santa María de la Paz homeless shelter. I organised the team's tasks and coordinated directly with our ESIC tutor and the shelter's director, and together we produced videos to tell the shelter's story and reach more people.
+              </p>
+              <div class="volunteering-tags">
+                <span class="volunteering-tag" data-i18n="volunteering.tag1">Leadership</span>
+                <span class="volunteering-tag" data-i18n="volunteering.tag2">Coordination</span>
+                <span class="volunteering-tag" data-i18n="volunteering.tag3">Storytelling</span>
+                <span class="volunteering-tag" data-i18n="volunteering.tag4">Social impact</span>
+              </div>
+            </div>
+
+            <!-- Smaller Card: Volunteering Days -->
+            <div class="volunteering-small-card">
+              <h4 class="volunteering-small-title" data-i18n="volunteering.smallTitle">Volunteering days · ESIC University</h4>
+              <p class="volunteering-small-desc" data-i18n="volunteering.smallDesc">
+                Regular participant in ESIC's one-day volunteering initiatives, including collecting supplies for people affected by the DANA floods in Valencia.
+              </p>
+            </div>
+          </div>
         </div>
 
         <!-- Outside Work Horizontal Strip -->
-        <div class="outside-work-box fade-in-element">
+        <div class="outside-work-box fade-in-element" id="outside-work">
           <h3 class="outside-work-title">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
             <span data-i18n="beyond.outsideWorkTitle">Outside Work</span>
@@ -805,22 +1069,53 @@
 
       </div>
     </section>
+    </div>
+    <!-- End Tab Panel: Beyond -->
+
+    <!-- =======================================================================
+         TAB 6: CONTACT (Contact)
+         ======================================================================= -->
+    <div class="tab-panel" id="tabpanel-contact" role="tabpanel" aria-labelledby="tab-contact" hidden>
 
     <!-- =======================================================================
          9. CONTACT SECTION
          ======================================================================= -->
     <section class="section contact-section" id="contact" aria-labelledby="contactTitle">
       <div class="container">
-        <div class="section-header fade-in-element">
-          <span class="section-tag green" data-i18n="nav.contact">Contact</span>
-          <h2 class="section-title" id="contactTitle" data-i18n="contact.sectionTitle">Contact &amp; Opportunities</h2>
+        
+        <!-- Tab Intro Row: Header + Video Player -->
+        <div class="tab-intro-row fade-in-element">
+          <div class="tab-intro-header">
+            <span class="section-tag green" data-i18n="nav.contact">Contact</span>
+            <h2 class="section-title" id="contactTitle" data-i18n="contact.sectionTitle">Contact &amp; Opportunities</h2>
+            <p class="contact-pitch" data-i18n="contact.headline">
+              Let's talk. I'm open to graduate roles in strategy and data consulting in London and Spain, starting June 2027.
+            </p>
+          </div>
+          <div class="tab-video-wrapper">
+            <div class="video-container">
+              <div class="video-header-badge">
+                <span class="video-pulse-dot" aria-hidden="true"></span>
+                <span data-i18n="hero.videoCaption">AI avatar</span>
+              </div>
+              <video 
+                id="video-contact" 
+                class="video-player" 
+                controls 
+                preload="none" 
+                playsinline 
+                poster="assets/poster-contact.jpg"
+                aria-label="Contact overview video of Belén Cereijo Silva">
+                <source src="assets/video-contact.mp4" type="video/mp4">
+                <track kind="subtitles" src="assets/video-contact.en.vtt" srclang="en" label="English">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-caption" data-i18n="hero.videoCaption">AI avatar</div>
+          </div>
         </div>
 
         <div class="contact-card-main fade-in-element">
-          <p class="contact-pitch" data-i18n="contact.headline">
-            Let's talk. I'm open to graduate roles in strategy and data consulting in London and Spain, starting June 2027.
-          </p>
-
           <div class="contact-channels-grid">
             <!-- Email -->
             <a href="mailto:bcereijosilva@gmail.com" class="channel-box">
@@ -841,6 +1136,17 @@
               <div class="channel-meta">
                 <span class="channel-label" data-i18n="contact.linkedInLabel">LinkedIn Profile</span>
                 <span class="channel-value" data-i18n="contact.linkedInBtn">Connect on LinkedIn</span>
+              </div>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/34655476612" target="_blank" rel="noopener noreferrer" class="channel-box">
+              <div class="channel-icon whatsapp">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.06 7.22C8.84 7.22 8.48 7.3 8.19 7.62C7.9 7.93 7.09 8.69 7.09 10.25C7.09 11.81 8.22 13.31 8.38 13.52C8.54 13.73 10.57 16.87 13.7 18.22C14.44 18.54 15.02 18.73 15.47 18.88C16.22 19.12 16.9 19.08 17.44 19C18.04 18.91 19.29 18.24 19.55 17.51C19.81 16.78 19.81 16.16 19.73 16.03C19.65 15.9 19.43 15.82 19.1 15.66C18.78 15.5 17.19 14.72 16.89 14.61C16.6 14.5 16.38 14.45 16.16 14.78C15.94 15.11 15.31 15.85 15.12 16.07C14.93 16.29 14.74 16.32 14.42 16.16C14.1 16 13.06 15.66 11.83 14.57C10.87 13.71 10.22 12.65 10.03 12.33C9.84 12.01 10.01 11.83 10.17 11.67C10.32 11.53 10.5 11.3 10.66 11.11C10.82 10.92 10.87 10.79 10.98 10.57C11.09 10.35 11.03 10.16 10.95 10C10.87 9.84 10.22 8.24 9.95 7.59C9.69 6.95 9.42 7.04 9.22 7.03C9.03 7.03 8.81 7.02 8.6 7.02L9.06 7.22Z"/></svg>
+              </div>
+              <div class="channel-meta">
+                <span class="channel-label" data-i18n="contact.whatsAppLabel">WhatsApp</span>
+                <span class="channel-value" data-i18n="contact.whatsAppBtn">Message me on WhatsApp</span>
               </div>
             </a>
           </div>
@@ -872,6 +1178,8 @@
         </div>
       </div>
     </section>
+    </div>
+    <!-- End Tab Panel: Contact -->
 
   </main>
 
@@ -886,5 +1194,22 @@
   <!-- Scripts -->
   <script src="i18n.js"></script>
   <script src="script.js"></script>
+  <script src="rag-config.js"></script>
+  <script src="rag-widget.js" defer></script>
+
+  <!-- Image Lightbox Modal -->
+  <div id="imageLightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image Preview">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-content">
+      <button type="button" class="lightbox-close" id="lightboxCloseBtn" aria-label="Close image preview">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="lightbox-img-container">
+        <img id="lightboxImg" src="" alt="" class="lightbox-img">
+      </div>
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
 </body>
 </html>
